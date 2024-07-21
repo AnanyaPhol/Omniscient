@@ -1,0 +1,23 @@
+{
+  "name": "omniscient",
+  "version": "1.0.0",
+  "description": "AI-powered customer service platform for FinTech",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": ["fintech", "ai", "customer-service"],
+  "author": "AnanyaPhol",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7"
+  }
+}
