@@ -36,7 +36,29 @@ omniscient/
 ├── data/               # Data processing scripts
 └── docs/               # Documentation
 ```
+## Setup and Installation
 
+1. Clone the repository:
+   ```
+   git clone https://github.com/AnanyaPhol/Omniscient.git
+   cd Omniscient
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   cd client && npm install
+   cd ../server && npm install
+   ```
+
+3. Start the development server:
+   ```
+   npm run dev
+   ```
+
+4. Open http://localhost:3000 in your browser to view the application.
+
+Note: Make sure you have Node.js and npm installed on your system before starting.
 ## Getting Started
 (Instructions for setting up and running the project will be added as the project develops)
 
