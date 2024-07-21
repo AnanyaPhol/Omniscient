@@ -1,0 +1,25 @@
+const tf = require('@tensorflow/tfjs-node');
+const natural = require('natural');
+const tokenizer = new natural.WordTokenizer();
+
+// Simplified chatbot model
+async function createChatbotModel() {
+  const model = tf.sequential();
+  model.add(tf.layers.embedding({inputDim: 10000, outputDim: 16, inputLength: 100}));
+  model.add(tf.layers.globalAveragePooling1d());
+  model.add(tf.layers.dense({units: 16, activation: 'relu'}));
+  model.add(tf.layers.dense({units: 10, activation: 'softmax'}));
+  
+  model.compile({optimizer: 'adam', loss: 'categoricalCrossentropy', metrics: ['accuracy']});
+  
+  return model;
+}
+
+// Function to process user input
+function processInput(input) {
+  const tokens = tokenizer.tokenize(input.toLowerCase());
+  // Further processing would go here
+  return tokens;
+}
+
+module.exports = { createChatbotModel, processInput };
